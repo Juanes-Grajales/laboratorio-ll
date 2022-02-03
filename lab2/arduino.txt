@@ -1,0 +1,42 @@
+LED con luz regulable
+
+link: https://www.tinkercad.com/things/c55aCSiLHxY
+codigo:
+int Led =3;  // indicando que el led se encuentra en el pin3
+int potenciometro =0; // el potenciometro esta conectado al pin A0
+int valor;  //variable para la intensidad de brillo
+
+void setup() {
+
+pinMode (Led, OUTPUT);  // declaramos el led como salida
+
+}
+
+void loop() {
+
+valor = analogRead (potenciometro)/4;
+analogWrite(Led, valor);
+
+}
+
+
+LCD
+
+link: https://www.tinkercad.com/things/0W3GXN7Zk7g
+codigo:
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7,6,5,4,3,2);
+
+void setup()
+{
+  lcd.begin(16,2);
+}
+
+void loop()
+{
+  lcd.setCursor(0,0);
+  lcd.print("hola mundo");
+  lcd.setCursor(0,1);
+  lcd.print("soy alexa");
+}
